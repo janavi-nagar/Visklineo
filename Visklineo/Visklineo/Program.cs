@@ -24,15 +24,15 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-//app.Use(async (context, next) =>
-//{
-//    var JWToken = context.Session.GetString("_token");
-//    if (!string.IsNullOrEmpty(JWToken))
-//    {
-//        context.Request.Headers.Add("Authorization", "Bearer " + JWToken);
-//    }
-//    await next();
-//});
+app.Use(async (context, next) =>
+{
+    var JWToken = context.Session.GetString("_token");
+    if (!string.IsNullOrEmpty(JWToken))
+    {
+        context.Request.Headers.Add("Authorization", "Bearer " + JWToken);
+    }
+    await next();
+});
 app.UseAuthorization();
 
 app.MapControllerRoute(

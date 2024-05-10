@@ -15,4 +15,11 @@
     <ProjectReference Include="..\Visklineo.Business\Visklineo.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Account\SignUp.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

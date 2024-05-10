@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Visklineo.Business.Helpers;
 using Visklineo.Business.ViewModels;
 using Visklineo.Business.ViewModels.User;
-using Visklineo.Business.ViewModels.User.User;
 using Visklineo.Database;
 
 namespace Visklineo.Api.Controllers
@@ -29,12 +28,17 @@ namespace Visklineo.Api.Controllers
 
         [HttpPost]
         [Route("SignUp")]
-        public async Task<bool> SignUp([FromBody] SignUpModel model)
+        public async Task<object> SignUp([FromBody] SignUpModel model)
         {
             var result = new IdentityResult();
             var user = new ApplicationUser {FirstName = model.FirstName, LastName = model.LastName, UserName = model.EmailId, Email = model.EmailId };
             result = await _userManager.CreateAsync(user, model.Password);
-            return result.Succeeded;
+            return new Response
+            {
+                model = result.Succeeded.ToString(),
+                Message = "",
+                Status = true
+            };
         }
         [HttpPost]
         [Route("Login")]

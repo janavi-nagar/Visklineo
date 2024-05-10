@@ -6,7 +6,6 @@ using System.Security.Claims;
 using System.Text;
 using Visklineo.Business.Helpers;
 using Visklineo.Business.ViewModels.User;
-using Visklineo.Business.ViewModels.User.User;
 using Visklineo.Database;
 
 namespace Visklineo.Api.Controllers

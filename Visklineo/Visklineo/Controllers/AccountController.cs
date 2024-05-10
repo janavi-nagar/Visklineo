@@ -14,6 +14,23 @@ namespace Visklineo.Controllers
 {
     public class AccountController : BaseController
     {
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public async Task<IActionResult> Register(SignUpModel signUpModel)
+        {
+            var result = await PostAsync(signUpModel, "Login/SignUp");
+            if (result.model != null && result.model.Equals("True"))
+            {
+                return RedirectToAction("SignIn");
+            }
+            else
+            {
+                return View("SignUp");
+            }
+        }
         public IActionResult SignIn()
         {
             return View();

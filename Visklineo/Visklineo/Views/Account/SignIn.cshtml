@@ -1,4 +1,5 @@
 ﻿@model Visklineo.Business.ViewModels.User.SignInModel
+
 <style>
     body {
         background-image: url('images/bgsignin.jpg');
@@ -21,7 +22,7 @@
         margin-top: 120px;
     }
 
-    h2 {
+    h4, a {
         color: #fff;
     }
 
@@ -46,21 +47,24 @@
             color: #fff;
         }
 
-    .field label{
+    .field label {
         color: #fff;
     }
 
     /* .field label {
-            position: absolute;
-            top: 30%;
-            left: 15px;
-            transform: translateY(-50%);
-            transition: .2s linear;
-        } */
+                position: absolute;
+                top: 30%;
+                left: 15px;
+                transform: translateY(-50%);
+                transition: .2s linear;
+            } */
 </style>
 <body>
     <div class="login-form">
-        <h2>Login</h2>
+        <div class="row">
+            <h4 class="col-sm-8">Login</h4>
+            <span class="col-sm-2"><a href="@Url.Action("SignUp","Account")">Register</a></span>
+        </div>
         @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "signin_form" }))
         {
             <div class="form">

@@ -1,0 +1,98 @@
+﻿@model Visklineo.Business.ViewModels.User.SignUpModel
+<style>
+    body {
+        background-image: url('/images/bgsignin.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .login-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background: linear-gradient(45deg, #5467, transparent);
+        box-shadow: 2px 4px 5px #000000, 2px 2px 6px #0386ca, 1px 2px 6px rgb(10 21 27);
+        width: 500px;
+        height: 100%;
+        margin: auto;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 120px;
+    }
+
+    h2 {
+        color: #fff;
+    }
+
+    input {
+        width: -webkit-fill-available;
+        padding: 12px 12px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        border: none;
+        padding: 12px;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+        button:hover {
+            background: #162029;
+            color: #fff;
+        }
+
+    .field label{
+        color: #fff;
+    }
+
+    /* .field label {
+            position: absolute;
+            top: 30%;
+            left: 15px;
+            transform: translateY(-50%);
+            transition: .2s linear;
+        } */
+</style>
+<body>
+    <div class="login-form">
+        <h2>Register</h2>
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "signin_form" }))
+        {
+            <div class="form">
+                <div class="row field">
+                    <div class="col-sm-6">
+                        @Html.LabelFor(x => x.FirstName)
+                        @Html.TextBoxFor(x => x.FirstName)
+                        @Html.ValidationMessageFor(x => x.FirstName)
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(x => x.LastName)
+                        @Html.TextBoxFor(x => x.LastName)
+                        @Html.ValidationMessageFor(x => x.LastName)
+                    </div>
+                </div>
+                <div class="field">
+                    @Html.LabelFor(x => x.EmailId)
+                    @Html.PasswordFor(x => x.EmailId)
+                    @Html.ValidationMessageFor(x => x.EmailId)
+                </div>
+                <div class="field">
+                    @Html.LabelFor(x => x.Password)
+                    @Html.PasswordFor(x => x.Password)
+                    @Html.ValidationMessageFor(x => x.Password)
+                </div>
+                <div class="field">
+                    @Html.LabelFor(x => x.ConfirmPassword)
+                    @Html.PasswordFor(x => x.ConfirmPassword)
+                    @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                </div>
+                <button>Submit</button>
+            </div>
+        }
+    </div>
+</body>

@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visklineo", "Visklineo\Visklineo.csproj", "{FA4807C1-AD30-4C58-9988-CC262860B049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visklineo", "Visklineo\Visklineo.csproj", "{FA4807C1-AD30-4C58-9988-CC262860B049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visklineo.Database", "Visklineo.Database\Visklineo.Database.csproj", "{89C0F397-E7B3-4CA4-86EE-A99BC2DFFD56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visklineo.Database", "Visklineo.Database\Visklineo.Database.csproj", "{89C0F397-E7B3-4CA4-86EE-A99BC2DFFD56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visklineo.Api", "Visklineo.Api\Visklineo.Api.csproj", "{D50C0C1B-CEA1-479E-8AC6-7B38D84B44F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visklineo.Api", "Visklineo.Api\Visklineo.Api.csproj", "{D50C0C1B-CEA1-479E-8AC6-7B38D84B44F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visklineo.Business", "Visklineo.Business\Visklineo.Business.csproj", "{441E5C39-A016-44AA-A9D0-99E495F94406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visklineo.Business", "Visklineo.Business\Visklineo.Business.csproj", "{441E5C39-A016-44AA-A9D0-99E495F94406}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73E495C7-4EAB-489B-A3D5-ABA679A3BBF9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
