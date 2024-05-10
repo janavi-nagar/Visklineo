@@ -1,0 +1,79 @@
+﻿@model Visklineo.Business.ViewModels.User.SignInModel
+<style>
+    body {
+        background-image: url('images/bgsignin.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .login-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background: linear-gradient(45deg, #5467, transparent);
+        box-shadow: 2px 4px 5px #000000, 2px 2px 6px #0386ca, 1px 2px 6px rgb(10 21 27);
+        width: 300px;
+        height: 100%;
+        margin: auto;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 120px;
+    }
+
+    h2 {
+        color: #fff;
+    }
+
+    input {
+        width: -webkit-fill-available;
+        padding: 12px 12px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        border: none;
+        padding: 12px;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+        button:hover {
+            background: #162029;
+            color: #fff;
+        }
+
+    .field label{
+        color: #fff;
+    }
+
+    /* .field label {
+            position: absolute;
+            top: 30%;
+            left: 15px;
+            transform: translateY(-50%);
+            transition: .2s linear;
+        } */
+</style>
+<body>
+    <div class="login-form">
+        <h2>Login</h2>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "signin_form" }))
+        {
+            <div class="form">
+                <div class="field">
+                    <label>Username</label>
+                    @Html.TextBoxFor(x => x.UserName)
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    @Html.PasswordFor(x => x.Password)
+                </div>
+                <button>Submit</button>
+            </div>
+        }
+    </div>
+</body>
